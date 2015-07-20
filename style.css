@@ -1,0 +1,104 @@
+
+body{
+
+font-family:"Trebuchet MS", Helvetica, sans-serif;
+}
+.str{
+font-size:130%;
+}
+.btn{
+outline:none;
+color:#2E5C8A;
+}
+.btn:hover{
+background-color:#2E5C8A;
+Color:#F5F5F0;
+border-radius:10px;
+outline:none 0;
+transition:0.5s linear;
+}
+.container{
+width:25%;
+float:left;
+border:2px solid #F7F7FA;
+border-radius:10px;
+box-shadow:1px 1px 1px #EBEBE0;
+padding:30 30 30 30;
+margin:30px 0 0 30px;
+background-color:	#007AA3;
+color:#FFFFFF;
+}
+.header{
+border-radius:20px;
+margin-top:10px;
+
+}
+.header:hover{
+background-color:#007AA3;
+transition:0.3s linear;
+border:none;
+color:#FFFFFF;
+}
+.container:hover{
+background-color:#E6F5FA;
+transition:0.3s linear;
+border:none;
+color:#24476B;
+
+box-shadow:2px 2px 5px #2E2E1F;
+}
+ textarea{
+        resize:none;
+        overflow:auto;
+        min-height:70px;
+        max-height:150px;
+        }
+p{
+    word-wrap: break-word;
+} 
+.btnmod{
+background:grey;
+border:none;
+border-radius:30px;
+font-size:12px;
+padding:10px 10px 10px 10px;
+margin:5px 5px 5px 5px;
+}
+.btnmod:hover{
+background:#0099CC;
+border:none;
+box-shadow:1 1 1 #000000;
+margin:5px 5px 5px 5px;
+color:#ffffff;
+}
+
+
+.addTask{
+border:none;
+margin:10px 3px 5px 2px;
+
+}
+
+.add{
+position:relative;
+float:right;
+}
+.well{
+padding:20 20 20 20;
+
+}
+.panel{
+background: #F7F7FA;
+box-shadow:1px 1px 3px #000000;	
+color:#2E5C8A;
+}
+.panel:hover{
+box-shadow:2px 2px 30px #000000;
+color:#2E5C8A;
+}
+.panel-heading{
+padding:3 3 3 3;
+width:10%;
+height:5%;
+float:right;
+}

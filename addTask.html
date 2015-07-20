@@ -1,0 +1,83 @@
+<div class="container" ng-attr-id="{{cId}}">
+<div class=addTask ng-show="showdiv"><form ng-submit=getParent(pname)>
+<input class=form-control placeholder="Task Name" ng-value="pname"   ng-model="pname" required /> 
+<br>
+<input type="submit" class=btn value=Add /></form>  </div>
+<h3  >{{parentName[parent]}}</h3><button class="btn glyphicon glyphicon-pencil" ng-click=edit() ng-hide=showdiv data-toggle="modal" data-target="#{{parent}}" data-toggle="tooltip" title="edit Task Name"></button>
+<button class="btn" ng-click=removeContainer(cId,parent) ng-hide=showdiv data-toggle="tooltip" title="Remove Task">X</button>
+
+
+<!--Edit Taskname MODAL -->
+
+<div class="modal fade"  ng-attr-id="{{parent}}" role="dialog">
+    
+	<div class="modal-dialog">
+        <div class="modal-content">
+    <div>
+		<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Task</h4>
+        </div>
+        <div class="modal-body well">
+          <input type=textarea class="form-control" ng-model="parentName[parent]"  value="parentName[Parent]" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+
+
+
+<div class="addTask" align=right ng-hide=showdiv ><button class="btn" ng-click="removeAll(parent)" data-toggle="tooltip" title="Remove All subtasks">x</button>&nbsp;Remove All </div> 
+<div  ng-attr-id={{parent}} ng-hide=showdiv  class=well  ondrop="drop(event)" ondragover="allowDrop(event)">
+	<div ng-repeat="p in list" class=panel   ng-attr-id="{{p.id}}" draggable="true" ondragstart="drag(event)">
+   	
+		<button class="btnmod panel-heading" ng-click=remove(p)  data-toggle="tooltip" title="Remove"> <span class="glyphicon glyphicon-minus"></span></button>
+		<button type="button" class="btnmod panel-heading glyphicon glyphicon-pencil" data-toggle="modal" data-target="#{{p.modId}}" data-toggle="tooltip" title="Edit Subtask"></button>
+
+  <!-- Display subtask name/created on -->
+  <div class=content>
+  	<p class="panel-body">{{p.name}}</p>
+	<p class="panel-body">{{p.dateCreated|date}} <em>{{p.dateCreated|date:'shortTime'}}</em></p>
+	</div>
+	 <!-- edit subtask name Modal -->
+	<div class="modal fade"  ng-attr-id="{{p.modId}}" role="dialog">
+    
+	<div class="modal-dialog">
+    
+      
+      <div class="modal-content">
+    <div>
+		<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Mode</h4>
+        </div>
+        <div class="modal-body well">
+          <input type=textarea class="form-control" ng-model="p.name" ondragover="true" value="p.name" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+	
+
+	
+	</div>
+	
+	</div>
+	
+	<form ng-submit=Create(add)>
+	<textarea ng-hide=showdiv type=textarea onkeyup="grow(this)" ng-model="add" value="add" class=form-control placeholder="Add sub task" required></textarea>
+	<input ng-hide=showdiv type=submit class="btn addTask" value=Add  />
+
+	</form><br>
+	</div>
